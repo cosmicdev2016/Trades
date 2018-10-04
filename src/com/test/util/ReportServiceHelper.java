@@ -42,10 +42,17 @@ public class ReportServiceHelper {
 	 */
 	public static SortedMap<Integer, Set<String>> getRankOfEntities(List<InstructionInfo> tradeData, char buySellFlag) {
 		
+		//Map of rank to entities, in ascending order of rank
 		SortedMap<Integer, Set<String>> ranking = new TreeMap<>();
 
+		//A sequence to generate next rank
 		final AtomicInteger rank = new AtomicInteger();
 		
+		/*
+		 * 1. Filter trades on B or S flag
+		 * 2. Group trades by settlement amount in TreeMap (reverse order)
+		 * 3. Rank trades and map ranks to list of entities/instruments
+		 */
 		tradeData.stream().filter(trade -> trade.getBuySellFlag() == buySellFlag)
 				.collect(Collectors.groupingBy(InstructionInfo::getSettleAmount,
 					() -> new TreeMap<>((amount1, amount2) -> amount2.compareTo(amount1)), Collectors.toSet()))
