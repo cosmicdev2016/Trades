@@ -29,20 +29,20 @@ public class TradeService {
 	 * @return
 	 */
 	public List<InstructionInfo> updateSettlementDate(List<InstructionInfo> tradeData) {
-		return tradeData.stream().map(e -> {
+		return tradeData.stream().map(trade -> {
 
-			if (!(e.getCurrency().equals("AED") || e.getCurrency().equals("SAR"))) {
+			if (!(trade.getCurrency().equals("AED") || trade.getCurrency().equals("SAR"))) {
 
-				InstructionInfo info = (InstructionInfo)e.clone();
+				InstructionInfo info = (InstructionInfo)trade.clone();
 
-				if (e.getOrigSettlementDate().getDayOfWeek() == DayOfWeek.SATURDAY) {
-					info.setNewSettlementDate(e.getOrigSettlementDate().plusDays(2));
+				if (trade.getOrigSettlementDate().getDayOfWeek() == DayOfWeek.SATURDAY) {
+					info.setNewSettlementDate(trade.getOrigSettlementDate().plusDays(2));
 				}
-				else if (e.getOrigSettlementDate().getDayOfWeek() == DayOfWeek.SUNDAY) {
-					info.setNewSettlementDate(e.getOrigSettlementDate().plusDays(1));
+				else if (trade.getOrigSettlementDate().getDayOfWeek() == DayOfWeek.SUNDAY) {
+					info.setNewSettlementDate(trade.getOrigSettlementDate().plusDays(1));
 				}
 				else {
-					info.setNewSettlementDate(e.getOrigSettlementDate());
+					info.setNewSettlementDate(trade.getOrigSettlementDate());
 				}
 
 				return info;
@@ -50,16 +50,16 @@ public class TradeService {
 			}
 			else {
 
-				InstructionInfo info = (InstructionInfo)e.clone();
+				InstructionInfo info = (InstructionInfo)trade.clone();
 
-				if (e.getOrigSettlementDate().getDayOfWeek() == DayOfWeek.FRIDAY) {
-					info.setNewSettlementDate(e.getOrigSettlementDate().plusDays(2));
+				if (trade.getOrigSettlementDate().getDayOfWeek() == DayOfWeek.FRIDAY) {
+					info.setNewSettlementDate(trade.getOrigSettlementDate().plusDays(2));
 				}
-				else if (e.getOrigSettlementDate().getDayOfWeek() == DayOfWeek.SATURDAY) {
-					info.setNewSettlementDate(e.getOrigSettlementDate().plusDays(1));
+				else if (trade.getOrigSettlementDate().getDayOfWeek() == DayOfWeek.SATURDAY) {
+					info.setNewSettlementDate(trade.getOrigSettlementDate().plusDays(1));
 				}
 				else {
-					info.setNewSettlementDate(e.getOrigSettlementDate());
+					info.setNewSettlementDate(trade.getOrigSettlementDate());
 				}
 
 				return info;

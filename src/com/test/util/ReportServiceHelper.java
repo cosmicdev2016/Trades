@@ -46,12 +46,12 @@ public class ReportServiceHelper {
 
 		final AtomicInteger rank = new AtomicInteger();
 		
-		tradeData.stream().filter(e -> e.getBuySellFlag() == buySellFlag)
+		tradeData.stream().filter(trade -> trade.getBuySellFlag() == buySellFlag)
 				.collect(Collectors.groupingBy(InstructionInfo::getSettleAmount,
-					() -> new TreeMap<>((c1, c2) -> c2.compareTo(c1)), Collectors.toSet()))
+					() -> new TreeMap<>((amount1, amount2) -> amount2.compareTo(amount1)), Collectors.toSet()))
 				.entrySet().stream()
 				.forEach(e -> ranking.put(rank.incrementAndGet(),
-					e.getValue().stream().map(e1 -> e1.getEntity()).collect(Collectors.toSet())));
+					e.getValue().stream().map(trade2 -> trade2.getEntity()).collect(Collectors.toSet())));
 		
 		return ranking;
 	}
