@@ -1,5 +1,9 @@
 # Java
 
+## Technology/Tools Used
+
+1. Java 8
+
 ## Run Book
 
 **1. Trades Reporting**
