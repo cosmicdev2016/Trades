@@ -109,7 +109,7 @@ public class TradeServiceImpl implements ITradeService {
 		info.setBuySellFlag('S');
 		info.setAgreedFx(0.22);
 		info.setCurrency("AED");
-		info.setInstructionDate(LocalDate.of(2018, 10, 5));
+		info.setInstructionDate(LocalDate.of(2018, 10, 4));
 		info.setOrigSettlementDate(LocalDate.of(2018, 10, 6));
 		info.setUnits(450);
 		info.setPricePerUnit(150.5);
@@ -122,6 +122,17 @@ public class TradeServiceImpl implements ITradeService {
 		info.setCurrency("SAR");
 		info.setInstructionDate(LocalDate.of(2018, 10, 3));
 		info.setOrigSettlementDate(LocalDate.of(2018, 10, 4));
+		info.setUnits(250);
+		info.setPricePerUnit(150.5);
+		instructionInfo.add(info);
+		
+		info = new InstructionInfo();
+		info.setEntity("bar_1_dup");
+		info.setBuySellFlag('S');
+		info.setAgreedFx(0.22);
+		info.setCurrency("SAR");
+		info.setInstructionDate(LocalDate.of(2018, 10, 3));
+		info.setOrigSettlementDate(LocalDate.of(2018, 10, 5));
 		info.setUnits(250);
 		info.setPricePerUnit(150.5);
 		instructionInfo.add(info);
