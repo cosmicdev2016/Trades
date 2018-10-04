@@ -10,24 +10,15 @@ import java.util.stream.Collectors;
 import com.test.model.InstructionInfo;
 
 
-public class TradeService {
+public class TradeServiceImpl implements ITradeService {
 
-	/**
-	 * Get the trades from the source system
-	 * 
-	 * @return
-	 */
+	@Override
 	public List<InstructionInfo> getDailyTrades() {
 		//mocked the data for demo
 		return getMockData();
 	}
 
-	/**
-	 * Update the actual settlement date on each trade based on weekend logic at entity level (AED or SAR)
-	 * 
-	 * @param tradeData
-	 * @return
-	 */
+	@Override
 	public List<InstructionInfo> updateSettlementDate(List<InstructionInfo> tradeData) {
 		return tradeData.stream().map(trade -> {
 

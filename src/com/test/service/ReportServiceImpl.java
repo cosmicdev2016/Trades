@@ -11,13 +11,9 @@ import com.test.model.InstructionInfo;
 import com.test.util.ReportServiceHelper;
 
 
-public class ReportService {
+public class ReportServiceImpl implements IReportService {
 
-	/**
-	 * Generate the text report from trades
-	 * 
-	 * @param tradeData
-	 */
+	@Override
 	public void generateTextReport(List<InstructionInfo> tradeData) {
 
 		Map<LocalDate, Double> outgoing = ReportServiceHelper.getAmountFlowingEveryday(tradeData, 'B');

@@ -4,8 +4,8 @@ package com.test.client;
 import java.util.List;
 
 import com.test.model.InstructionInfo;
-import com.test.service.ReportService;
-import com.test.service.TradeService;
+import com.test.service.ReportServiceImpl;
+import com.test.service.TradeServiceImpl;
 
 
 /**
@@ -18,7 +18,7 @@ public class DailyTradeReporting {
 
 	public static void main(String[] args) {
 
-		TradeService tradeService = new TradeService();
+		TradeServiceImpl tradeService = new TradeServiceImpl();
 
 		//Get the daily trades data
 		//this is a mock data for demo
@@ -28,7 +28,7 @@ public class DailyTradeReporting {
 		instructionInfo = tradeService.updateSettlementDate(instructionInfo);
 
 		//Generate the Text report and display on Console
-		ReportService reportService = new ReportService();
+		ReportServiceImpl reportService = new ReportServiceImpl();
 		reportService.generateTextReport(instructionInfo);
 
 	}
