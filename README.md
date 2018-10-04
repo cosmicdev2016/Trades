@@ -18,8 +18,9 @@
 
 ## Sample Outout
 
-`Amount in USD settled outgoing everyday`
-`Date: 2018-10-05, Amount: 15037.5`
+```
+Amount in USD settled outgoing everyday
+Date: 2018-10-05, Amount: 15037.5
 Date: 2018-10-04, Amount: 10626.5
 Date: 2018-10-01, Amount: 20150.25
 
@@ -40,4 +41,6 @@ Rank: 3, Entity(s): [foo, foo_dup]
 
 Rank incoming entities
 Rank: 1, Entity(s): [bar_large]
-Rank: 2, Entity(s): [bar_1]`
+Rank: 2, Entity(s): [bar_1]
+```
+
