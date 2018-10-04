@@ -18,8 +18,8 @@
 
 ## Sample Outout
 
-`Amount in USD settled outgoing everyday
-Date: 2018-10-05, Amount: 15037.5
+`Amount in USD settled outgoing everyday`
+`Date: 2018-10-05, Amount: 15037.5`
 Date: 2018-10-04, Amount: 10626.5
 Date: 2018-10-01, Amount: 20150.25
 
